@@ -7,6 +7,12 @@ import {
   ScrollRestoration,
 } from '@remix-run/react';
 import type { MetaFunction } from '@remix-run/node';
+import Nav from './components/nav';
+import styles from "./styles/app.css"
+
+export function links() {
+  return [{ rel: "stylesheet", href: styles }]
+}
 
 export const meta: MetaFunction = () => {
   return { title: 'New Remix App' };
@@ -22,6 +28,7 @@ export default function App() {
         <Links />
       </head>
       <body>
+        <Nav/>
         <Outlet />
         <ScrollRestoration />
         <Scripts />
